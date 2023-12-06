@@ -6,33 +6,23 @@ CQC-Mugshot is a mugshot system for use with QB servers to allow players to take
 <h1>INSTALLATION GUIDE</h1>
 
 1. Add the cqc-mugshot folder into your resources folder
-2. Add The Following Line to qb-target>config.lua>Config.BoxZones (**change the location etc as needed**)
+2. Add The Following Line to qb-target>config.lua>Config.TargetModels
 
 ```lua
 -- CQC-Mugshot
-['CQCMugshot'] = {
-		name = 'CQCMugshot',
-		coords = vector3(-556.26, -132.99, 33.75),
-		debugPoly = false,
-		length = 0.50,
-		width = 0.65,
-		heading = 131.24,
-		maxZ = 34.30,
-		minZ = 33.75,
-		options = {
-			{
-				icon = 'fas fa-camera',
-				label = 'Take Suspects Mugshots',
-				job = {
-					['police'] = 0,
-					['sast'] = 0,
-				},
-				event = 'cqc-mugshot:client:takemugshot',
-				type = 'client',
-			},
-		},
-		distance = 2.0,
-	},
+    ["CQCMugshot"] = {
+        models = {-1286783315}, -- Model-Hash or for Peds the Propname like `a_m_y_business_03`
+        options = {
+            {
+                type = "client",
+                event = "cqc-mugshot:client:takemugshot",
+                icon = "fas fa-camera",
+                label = "Take Suspects Mugshots",
+                job = 'police',
+            },
+        },
+        distance = 2.0
+    },
 ```
 
 <h1>FEATURES</h1>
